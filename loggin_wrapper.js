@@ -1,7 +1,7 @@
 var wrapLog = function (callback, name) {
   var fn = function(x, y, z) {
     var args = Array.from(arguments);
-    var answer = callback.apply(null, args);
+    var answer = callback.apply(null, args); // null meaning this refers to the global object.
     console.log(name + "(" + args.join(", ") + ") => " + answer);
   }
   return fn;
